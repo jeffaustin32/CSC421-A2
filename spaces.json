@@ -1,0 +1,282 @@
+[
+    {
+        "id": 0,
+        "color": "fff",
+        "name": "Go (collect $200)",
+        "cost": 0,
+        "type": "GO"
+    },
+    {
+        "id": 1,
+        "color": "#8b4514",
+        "name": "Mediterranean Avenue",
+        "cost": 60,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 2,
+        "color": "fff",
+        "name": "Community Chest",
+        "cost": 0,
+        "type": "COMMUNITY_CHEST"
+    },
+    {
+        "id": 3,
+        "color": "#8b4514",
+        "name": "Baltic Avenue",
+        "cost": 60,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 4,
+        "color": "fff",
+        "name": "Income Tax",
+        "cost": 200,
+        "type": "TAX"
+    },
+    {
+        "id": 5,
+        "color": "fff",
+        "name": "Reading Railroad",
+        "cost": 200,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 6,
+        "color": "#87ceeb",
+        "name": "Oriental Avenue",
+        "cost": 100,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 7,
+        "color": "fff",
+        "name": "Chance",
+        "cost": 0,
+        "type": "CHANCE"
+    },
+    {
+        "id": 8,
+        "color": "#87ceeb",
+        "name": "Vermont Avenue",
+        "cost": 100,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 9,
+        "color": "#87ceeb",
+        "name": "Connecticut Avenue",
+        "cost": 120,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 10,
+        "color": "fff",
+        "name": "In Jail/Just Visiting",
+        "cost": 0,
+        "type": "JAIL"
+    },
+    {
+        "id": 11,
+        "color": "#9932cc",
+        "name": "St. Charles Place",
+        "cost": 140,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 12,
+        "color": "fff",
+        "name": "Electric Company",
+        "cost": 150,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 13,
+        "color": "#9932cc",
+        "name": "States Avenue",
+        "cost": 140,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 14,
+        "color": "#9932cc",
+        "name": "Virginia Avenue",
+        "cost": 160,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 15,
+        "color": "fff",
+        "name": "Pennsylvania Railroad",
+        "cost": 200,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 16,
+        "color": "#ffa500",
+        "name": "St. James Place",
+        "cost": 180,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 17,
+        "color": "fff",
+        "name": "Community Chest",
+        "cost": 0,
+        "type": "COMMUNITY_CHEST"
+    },
+    {
+        "id": 18,
+        "color": "#ffa500",
+        "name": "Tennessee Avenue",
+        "cost": 180,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 19,
+        "color": "#ffa500",
+        "name": "New York Avenue",
+        "cost": 200,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 20,
+        "color": "fff",
+        "name": "Free Parking",
+        "cost": 0,
+        "type": "FREE_PARKING"
+    },
+    {
+        "id": 21,
+        "color": "#ff0000",
+        "name": "Kentucky Avenue",
+        "cost": 220,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 22,
+        "color": "fff",
+        "name": "Chance",
+        "cost": 0,
+        "type": "CHANCE"
+    },
+    {
+        "id": 23,
+        "color": "#ff0000",
+        "name": "Indiana Avenue",
+        "cost": 220,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 24,
+        "color": "#ff0000",
+        "name": "Illinois Avenue",
+        "cost": 240,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 25,
+        "color": "fff",
+        "name": "B&O Railroad",
+        "cost": 200,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 26,
+        "color": "#ff0",
+        "name": "Atlantic Avenue",
+        "cost": 260,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 27,
+        "color": "#ff0",
+        "name": "Ventnor Avenue",
+        "cost": 260,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 28,
+        "color": "fff",
+        "name": "Water Works",
+        "cost": 150,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 29,
+        "color": "#ff0",
+        "name": "Marvin Gardens",
+        "cost": 280,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 30,
+        "color": "fff",
+        "name": "Go To Jail",
+        "cost": 0,
+        "type": "GO_TO_JAIL"
+    },
+    {
+        "id": 31,
+        "color": "#008000",
+        "name": "Pacific Avenue",
+        "cost": 300,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 32,
+        "color": "#008000",
+        "name": "North Carolina Avenue",
+        "cost": 300,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 33,
+        "color": "fff",
+        "name": "Community Chest",
+        "cost": 0,
+        "type": "COMMUNITY_CHEST"
+    },
+    {
+        "id": 34,
+        "color": "#008000",
+        "name": "Pennsylvania Avenue",
+        "cost": 320,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 35,
+        "color": "fff",
+        "name": "Short Line",
+        "cost": 200,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 36,
+        "color": "fff",
+        "name": "Chance",
+        "cost": 0,
+        "type": "CHANCE"
+    },
+    {
+        "id": 37,
+        "color": "#0000ff",
+        "name": "Park Place",
+        "cost": 350,
+        "type": "PROPERTY"
+    },
+    {
+        "id": 38,
+        "color": "fff",
+        "name": "Luxury Tax",
+        "cost": 100,
+        "type": "TAX"
+    },
+    {
+        "id": 39,
+        "color": "#0000ff",
+        "name": "Boardwalk",
+        "cost": 400,
+        "type": "PROPERTY"
+    }
+]
