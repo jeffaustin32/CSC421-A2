@@ -45,10 +45,7 @@ class Board:
             space = self.player.space
             # Let the player make their move
             self.player.move()
-
             space = self.spaces[self.player.space]
-            # For stats, increase time spent in the new space (or same if jail)
-            space.visited += 1
 
             # Perform action depending on space type
             if space.spaceType == SpaceType.GO:
@@ -65,6 +62,9 @@ class Board:
                 self.player.money -= space.cost
             elif space.spaceType == SpaceType.GO_TO_JAIL:
                 self.player.goToJail()
+                
+            # For stats, increase time spent in the new space (or same if jail)
+            space.visited += 1
 
     def __str__(self):
         output = ""
