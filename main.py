@@ -7,4 +7,5 @@ for i in range(1000):
     results += board
 
 print(results)
-print(results.player.rolls)
+for player in results.players:
+    print(player.rolls)

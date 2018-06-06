@@ -1,7 +1,5 @@
 'Represents a Community Chest card in Monopoly'
 'http://monopoly.wikia.com/wiki/Community_Chest'
-
-
 class CommunityChest:
     def __init__(self, index):
         self.index = index

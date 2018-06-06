@@ -1,7 +1,5 @@
 'Represents a Chance card in Monopoly'
 'http://monopoly.wikia.com/wiki/Chance'
-
-
 class Chance:
     def __init__(self, index):
         self.index = index

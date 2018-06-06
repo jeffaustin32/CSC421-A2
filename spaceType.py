@@ -10,3 +10,5 @@ class SpaceType(enum.Enum):
     GO_TO_JAIL = 6
     FREE_PARKING = 7
     TAX = 8
+    UTILITY = 9
+    RAILROAD = 10

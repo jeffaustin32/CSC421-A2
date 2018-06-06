@@ -14,13 +14,16 @@ class Board:
         self.communityChest = []
         self.chance = []
 
+        # Create the players
+        self.players = [Player("Player 1"), Player("Player 2"), Player("Player 3")]
+
         # Read spaces data from JSON
         with open('spaces.json') as space:
             spacesData = json.load(space)
 
         # Generate spaces
         for spaceData in spacesData:
-            self.spaces.append(Space(spaceData["id"], spaceData["color"], spaceData["name"], spaceData["cost"], SpaceType[spaceData["type"]]))
+            self.spaces.append(Space(spaceData["id"], spaceData["color"], spaceData["name"], spaceData["cost"], spaceData["rent"], SpaceType[spaceData["type"]]))
 
         # Generate community chest cards
         for i in range(17):
@@ -33,38 +36,34 @@ class Board:
             self.chance.append(Chance(i))
         # Shuffle chance deck
         random.shuffle(self.chance)
-        
-        # Create the player
-        self.player = Player(0, 10, len(self.spaces))
 
     'Simulates 100 turns'
     def simulate(self):
         # Simulate 100 turns for player
         for i in range(100):
-            # Record the player's current space
-            space = self.player.space
-            # Let the player make their move
-            self.player.move()
-            space = self.spaces[self.player.space]
+            for player in self.players:
+                # This player is broke and out of the game
+                if player.money < 0:
+                    continue
 
-            # Perform action depending on space type
-            if space.spaceType == SpaceType.GO:
-                self.player.money += 200
-            elif space.spaceType == SpaceType.CHANCE:
-                # Draw and play a chance card
-                card = self.chance.pop()
-                card.play(self.player)
-            elif space.spaceType == SpaceType.COMMUNITY_CHEST:
-                # Draw and play a community chest card
-                card = self.communityChest.pop()
-                card.play(self.player)
-            elif space.spaceType == SpaceType.TAX:
-                self.player.money -= space.cost
-            elif space.spaceType == SpaceType.GO_TO_JAIL:
-                self.player.goToJail()
+                # Record the player's current space
+                space = player.space
+                # Let the player make their move
+                roll = player.move()
+                space = self.spaces[player.space]
+                # Visit the space and perform any space type specific actions
+                space.visit(player, roll, self.spaces, self.chance, self.communityChest)
                 
-            # For stats, increase time spent in the new space (or same if jail)
-            space.visited += 1
+                # Position may have changed by chance or community chest
+                newSpace = self.spaces[player.space]
+                if not newSpace == space:
+                    # Visit the space and perform any space type specific actions
+                    space.visit(player, roll, self.spaces, self.chance, self.communityChest)
+
+                # Player has gone broke and must relinquish all properties
+                if player.money < 0:
+                    for property in player.properties:
+                        property.owner = None
 
     def __str__(self):
         output = ""
@@ -80,7 +79,8 @@ class Board:
             board.spaces[i].visited = self.spaces[i].visited + other.spaces[i].visited
         
         # Sum the roll distribution for both players
-        for roll in board.player.rolls:
-            board.player.rolls[roll] = self.player.rolls[roll] + other.player.rolls[roll]
+        for i, player in enumerate(board.players):
+            for roll in player.rolls:
+                player.rolls[roll] = self.players[i].rolls[roll] + other.players[i].rolls[roll]
         
         return board

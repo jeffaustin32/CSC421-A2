@@ -1,24 +1,33 @@
 import random
 
 'Represent a player in Monopoly'
-
 class Player:
-    def __init__(self, space, jail, spacesCount):
-        self.money = 0
-        self.space = space
-        self.jail = jail
+    def __init__(self, name):
+        self.name = name
+        self.money = 1500
+        self.space = 0
+        self.jail = 10
         self.jailed = False
         self.jailedFor = 0
-        self.spacesCount = spacesCount
+        self.spacesCount = 40
         self.getOutOfJailFree = False
+        self.properties = []
         self.rolls = {2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0}
 
     'Simulate the players turn'
     def move(self):
         # Roll the die
-        self.space += self.roll()
+        roll = self.roll()
+
+        self.space += roll
+
+        # Player has passed go
+        if self.space > self.spacesCount:
+            self.money += 200
+
         # Wrap player around if they have gone around the board
         self.space = self.space % self.spacesCount
+        return roll
 
     'Player is going to jail'
     def goToJail(self):
@@ -38,8 +47,8 @@ class Player:
             return 0
 
         # Generate two random rolls
-        rollOne = int(round(random.random() * 5)) + 1
-        rollTwo = int(round(random.random() * 5)) + 1
+        rollOne = random.randint(1, 6)
+        rollTwo = random.randint(1, 6)
 
         # Check if player is in jail and didn't roll doubles
         if self.jailed:
@@ -60,7 +69,7 @@ class Player:
         # For stats, increment roll count
         self.rolls[totalRoll] += 1
 
-        # Check if doubles were rolled, if so roll again and increment doublesRolled
+        # Check if doubles were rolled, if so roll again
         if rollOne == rollTwo:
             newRoll = self.roll(doublesRolled + 1)
 
