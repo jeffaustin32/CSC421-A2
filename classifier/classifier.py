@@ -98,7 +98,10 @@ class Classifier:
     
     def generateReview(self, polarity):
         review = []
+        # Go through every word in the dictionary for this polarity
         for word in self.probabilities[polarity]:
+            # Compare a random number to the probability for this word
             if self.probabilities[polarity][word] >= random.random():
+                # Add this word to the review
                 review.append(word)
         return review
